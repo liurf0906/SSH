@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	
+		<package name="user" extends="struts-default">
+			<global-results>
+				<result type="redirectAction">findAll.action</result>
+				<result name="false">/login.jsp</result>
+				<result name="show">/main.jsp</result>
+				<result name="saveOne" type="redirect">/login.jsp</result>
+			</global-results>
+			
+			<action name="login" class="com.woniu.action.UserAction" method="login">
+			</action>
+			
+			<action name="findAll" class="com.woniu.action.UserAction" method="findAll">	
+			</action>
+		
+			<action name="save" class="com.woniu.action.UserAction" method="save">	
+			</action>
+		</package>
+	</struts>
